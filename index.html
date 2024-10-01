@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Journey of Our Love</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+            background: linear-gradient(to bottom, #f855ac, #ffb6c1);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        body {
+            cursor: none; /* Hide the default cursor */
+        }
+
+        .custom-cursor {
+            position: fixed;
+            font-size: 24px; /* Adjust size as needed */
+            pointer-events: none;
+            z-index: 9999; /* Ensure it stays on top */
+            transition: transform 0.2s;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #69093c;
+        }
+
+        .message {
+            background: linear-gradient(to bottom, #e82ba2, #fbb0d7);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ensure positioning context */
+            overflow: visible; /* Allow overflow */
+            text-align: center; /* Center text */
+            opacity: 0; /* Start hidden */
+            transform: translateY(50px); /* Start below */
+        }
+
+        .message-text {
+            display: inline-block; /* Allow transformation */
+            transition: transform 0.3s ease, font-size 0.3s ease; /* Transition for the text */
+            position: relative; /* For z-index adjustments */
+            z-index: 1; /* Keep text on top */
+            font-size: 22px; /* Base font size */
+        }
+
+        .message:hover .message-text {
+            transform: scale(1.8); /* Scale up */
+            z-index: 2; /* Bring text above the box */
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 24px;
+            color: #ff69b4;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .interactive-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 40px 0;
+            cursor: pointer;
+            color: #ff1493;
+            transition: transform 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            transform: scale(1.1);
+        }
+
+        .photo-placeholder {
+            width: 300px;
+            height: 200px;
+            background-color: #ffb6c1;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        .dream-home-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the box */
+            border-radius: 10px; /* Keeps the rounded corners */
+        }
+
+        #loveQuote {
+            font-style: italic;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 20px;
+            color: #ff69b4;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .message-text {
+                font-size: 20px;
+            }
+            .interactive-element {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .message-text {
+                font-size: 18px;
+            }
+            .interactive-element {
+                font-size: 18px;
+            }
+            .custom-cursor {
+                font-size: 20px; /* Adjust cursor size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <h1>Happy 8th months wifeyy!</h1>
+            <div class="message">
+                <span class="message-text">From the moment I first saw you, I knew you were special.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">Your smile lights up my world like nothing else.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">Every day with you is a new adventure I cherish.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>Our Memories</h2>
+            <div class="photo-placeholder" style="height: 400px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                <img src="sk.jpeg" alt="Our First Date" style="width: 100%; height: 100%; max-height: 100%; border-radius: 10px;">
+            </div>
+            <div class="message">
+                <span class="message-text">Remember our first date? I was so nervous, but you made me feel at ease.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">That day, I realized I wanted to spend every moment with you.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>Why I Love You</h2>
+            <div class="message">
+                <span class="message-text">Your kindness knows no bounds.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">Your laugh is my favorite sound in the world.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">You inspire me to be a better person every day.</span>
+            </div>
+            <div class="interactive-element" id="moreReasons"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>Our Future Together</h2>
+            <div class="message">
+                <span class="message-text">I dream of waking up next to you every morning.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">I can't wait to create more beautiful memories with you.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">Our love story is my favorite, and it's just beginning.</span>
+            </div>
+            <div class="photo-placeholder" style="height: 400px;">
+                <img src="sk2.jpeg" alt="Our Dream Home" class="dream-home-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>My Promise to You</h2>
+            <div class="message">
+                <span class="message-text">I promise to love you unconditionally, through all of life's ups and downs.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">I promise to be your biggest supporter and your best friend.</span>
+            </div>
+            <div class="message">
+                <span class="message-text">I promise to cherish every moment we share together.</span>
+            </div>
+            <div id="loveQuote"></div>
+            <div class="interactive-element" id="newQuote">Click for more love quotes, baby!</div>
+        </div>
+    </div>
+
+    <div class="custom-cursor" id="customCursor">💝</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const colors = [
+                '#FFD1DC', '#FFF0F5', '#FFB6C1', '#FFC0CB', '#FF69B4', '#FF1493',
+            ];
+
+            // Message animations
+            gsap.utils.toArray('.message').forEach((message) => {
+                gsap.to(message, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: message,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+
+                gsap.to(message, {
+                    backgroundColor: gsap.utils.wrap(colors),
+                    scrollTrigger: {
+                        trigger: message,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            });
+
+            // Heart animation on mousemove
+            document.addEventListener('mousemove', (e) => {
+                if (Math.random() > 0.92) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = e.clientX + 'px';
+                    heart.style.top = e.clientY + 'px';
+                    document.body.appendChild(heart);
+
+                    gsap.to(heart, {
+                        y: -100,
+                        x: Math.random() * 100 - 50,
+                        opacity: 0,
+                        duration: 2,
+                        ease: 'power1.out',
+                        onComplete: () => heart.remove()
+                    });
+                }
+
+                // Move the custom cursor
+                const customCursor = document.getElementById('customCursor');
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+            });
+
+            // More reasons button
+            document.getElementById('moreReasons').addEventListener('click', () => {
+                const reasons = [
+                    "Your passion for life inspires me.",
+                    "You always know how to make me smile.",
+                    "Your strength in tough times amazes me.",
+                    "You're the most beautiful person, inside and out.",
+                    "Your love makes me feel invincible."
+                ];
+                const newMessage = document.createElement('div');
+                newMessage.className = 'message';
+                newMessage.innerHTML = `<span class="message-text">${reasons[Math.floor(Math.random() * reasons.length)]}</span>`;
+                document.getElementById('moreReasons').parentNode.insertBefore(newMessage, document.getElementById('moreReasons'));
+
+                gsap.from(newMessage, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
+
+                gsap.to(newMessage, {
+                    backgroundColor: gsap.utils.wrap(colors),
+                    scrollTrigger: {
+                        trigger: newMessage,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            });
+
+            // Love quotes
+            const loveQuotes = [
+                "In all the world, there is no heart for me like yours.",
+                "I love you not only for what you are, but for what I am when I am with you.",
+                "You are my today and all of my tomorrows.",
+                "I fell in love with you because you loved me when I couldn't love myself.",
+                "Every love story is beautiful, but ours is my favorite."
+            ];
+
+            function setRandomQuote() {
+                const quoteElement = document.getElementById('loveQuote');
+                const randomQuote = loveQuotes[Math.floor(Math.random() * loveQuotes.length)];
+                gsap.to(quoteElement, {opacity: 0, duration: 0.5, onComplete: () => {
+                    quoteElement.textContent = randomQuote;
+                    gsap.to(quoteElement, {opacity: 1, duration: 0.5});
+                }});
+            }
+
+            document.getElementById('newQuote').addEventListener('click', setRandomQuote);
+
+            // Set initial quote
+            setRandomQuote();
+        });
+    </script>
+</body>
+</html>
